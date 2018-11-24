@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="/static/css/all.css">
+    <title>Mission Planner</title>
+  </head>
+  <body>
+
+
+      {% include 'nav.html' %}
+<div class="container" style="margin-top:100px; margin-bottom:200px;">
+
+  <div class="row justify-content-md-center">
+    <div class="col-md-12">
+      <h3 class="text-center" style="">Mission Create</h3><br><br>
+    </div>
+    <div class="col-md-6">
+     {{message}}
+      <br\>
+      <form action = "/mission" method="POST">
+      	<label>Street Location:<br/></label>
+        <label>
+          Address 1 : 
+          <input type="text" name = "street" required />
+        </label><br/>
+        
+			<label>
+          City : 
+          <input type="text" name = "city"  required />
+        </label><br/>
+
+			<label>
+          State : 
+          <input type="text" name = "state"  required />
+        </label><br/><br/>
+
+         <label>
+          Type of emergency
+          <select  name = "typeofmission" required>
+            <option value="Fire">Fire</option>
+            <option value="Flood">Flood</option>
+          </select>
+        </label><br/><br/>
+        
+        <label>
+          Type of environment
+          <select  name = "indoor_outdoor" required>
+            <option value="Indoor">Indoor</option>
+            <option value="Outdoor">Outdoor</option>
+          </select>
+        </label><br/><br/>
+        
+        <label>
+          Intensity of emergency
+          <select  name = "minmaj" required>
+            <option value="Major">Major</option>
+            <option value="Minor">Minor</option>
+          </select>
+        </label><br/><br/>
+        <input type="submit" value="Create Mission" />
+      </form>
+
+    </div>
+  </div>
+
+</div>
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  </body>
+</html>
